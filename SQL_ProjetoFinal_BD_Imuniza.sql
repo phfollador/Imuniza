@@ -21,52 +21,52 @@ USE `Imuniza` ;
 -- Table `Imuniza`.`Estado_Civil`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Imuniza`.`Estado_Civil` (
-  `idEstadoCivil` INT NOT NULL,
+  `idEstadoCivil` INT NOT NULL AUTO_INCREMENT,
   `EstadoCivil` VARCHAR(45) NULL,
   PRIMARY KEY (`idEstadoCivil`));
 
-INSERT INTO Estado_Civil(idEstadoCivil, EstadoCivil) VALUES ('1', 'Solteiro');
+INSERT INTO Estado_Civil(EstadoCivil) VALUES ('Solteiro');
 
 -- -----------------------------------------------------
 -- Table `Imuniza`.`Escolaridade`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Imuniza`.`Escolaridade` (
-  `idEscolaridade` INT NOT NULL,
+  `idEscolaridade` INT NOT NULL AUTO_INCREMENT,
   `grauEscolaridade` VARCHAR(60) NOT NULL,
   PRIMARY KEY (`idEscolaridade`));
 
-INSERT INTO Escolaridade(idEscolaridade, grauEscolaridade) VALUES ('1', 'Ensino Medio');
+INSERT INTO Escolaridade(grauEscolaridade) VALUES ('Ensino Medio');
 
 -- -----------------------------------------------------
 -- Table `Imuniza`.`Plano_Saude`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Imuniza`.`Plano_Saude` (
-  `idPlano` INT NOT NULL,
+  `idPlano` INT NOT NULL AUTO_INCREMENT,
   `descricaoPlano` VARCHAR(60) NOT NULL,
   PRIMARY KEY (`idPlano`));
 
-INSERT INTO Plano_Saude(idPlano, descricaoPlano) VALUES ('1', 'Unimed');
+INSERT INTO Plano_Saude(descricaoPlano) VALUES ('Unimed');
 -- -----------------------------------------------------
 -- Table `Imuniza`.`Religiao`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Imuniza`.`Religiao` (
-  `idReligiao` INT NOT NULL,
+  `idReligiao` INT NOT NULL AUTO_INCREMENT,
   `descReligiao` VARCHAR(60) NOT NULL,
   PRIMARY KEY (`idReligiao`));
 
-INSERT INTO Religiao(idReligiao, descReligiao) VALUES ('1', 'Catolico');
+INSERT INTO Religiao(descReligiao) VALUES ('Catolico');
 
 -- -----------------------------------------------------
 -- Table `Imuniza`.`Sensiveis`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Imuniza`.`Sensiveis` (
-  `idSensiveis` INT NOT NULL,
+  `idSensiveis` INT NOT NULL AUTO_INCREMENT,
   `Raca` VARCHAR(45) NULL,
   `Cor` VARCHAR(45) NULL,
   `Etnia` VARCHAR(45) NULL,
   PRIMARY KEY (`idSensiveis`));
 
-INSERT INTO Sensiveis(idSensiveis, Raca, Cor, Etnia) VALUES ('1', 'nao sei o que e', 'nao sei o que e', 'nao sei o que e');
+INSERT INTO Sensiveis(Raca, Cor, Etnia) VALUES ('nao sei o que e', 'nao sei o que e', 'nao sei o que e');
 
 -- -----------------------------------------------------
 -- Table `Imuniza`.`Pessoa`
@@ -122,18 +122,23 @@ CREATE TABLE IF NOT EXISTS `Imuniza`.`Pessoa` (
 -- Table `Imuniza`.`Doenca`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Imuniza`.`Doenca` (
-  `idDoenca` INT NOT NULL,
+  `idDoenca` INT NOT NULL AUTO_INCREMENT,
   `codigoDoenca` VARCHAR(45) NOT NULL,
   `descDoenca` VARCHAR(60) NOT NULL,
   `sintomas` TEXT NULL,
   PRIMARY KEY (`idDoenca`));
+
+INSERT INTO Doenca(codigoDoenca, descDoenca, sintomas) VALUES ('Sars-Cov-19', 'doenca que tem alta taxa de transmissao', 'febre e falta de ar');
+INSERT INTO Doenca(codigoDoenca, descDoenca, sintomas) VALUES ('COVID-19', 'doenca que tem alta taxa de transmissao', 'febre e falta de ar');
+INSERT INTO Doenca(codigoDoenca, descDoenca, sintomas) VALUES ('Sarampo', 'doenca que tem alta taxa de transmissao', 'febre');
+INSERT INTO Doenca(codigoDoenca, descDoenca, sintomas) VALUES ('Tetano', 'infeccao aguda e grave', 'disfunção do sistema nervoso, febre, pressão alta ou suor');
 
 
 -- -----------------------------------------------------
 -- Table `Imuniza`.`Vacina`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Imuniza`.`Vacina` (
-  `idVacina` INT NOT NULL,
+  `idVacina` INT NOT NULL AUTO_INCREMENT,
   `codVacina` VARCHAR(60) NOT NULL,
   `lote` VARCHAR(45) NULL,
   `doses` INT NOT NULL,
@@ -174,7 +179,6 @@ CREATE TABLE IF NOT EXISTS `Imuniza`.`Pessoa_Vacina` (
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
 
 INDEX `DoencaFK_idx` (`idDoenca` ASC) VISIBLE,
 

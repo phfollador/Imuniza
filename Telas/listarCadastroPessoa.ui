@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>556</width>
-    <height>240</height>
+    <width>253</width>
+    <height>358</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <widget class="QLabel" name="labelTitulo">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>50</x>
       <y>0</y>
       <width>151</width>
       <height>41</height>
@@ -35,8 +35,8 @@
    <widget class="QLineEdit" name="campoSUS">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>90</y>
+      <x>20</x>
+      <y>70</y>
       <width>113</width>
       <height>20</height>
      </rect>
@@ -45,8 +45,8 @@
    <widget class="QLabel" name="labelCadastroSUS">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>90</y>
+      <x>20</x>
+      <y>50</y>
       <width>71</width>
       <height>16</height>
      </rect>
@@ -58,10 +58,10 @@
    <widget class="QPushButton" name="botaoConsultar">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>150</y>
+      <x>140</x>
+      <y>70</y>
       <width>91</width>
-      <height>41</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -71,14 +71,66 @@
    <widget class="QPushButton" name="botaoListarTodos">
     <property name="geometry">
      <rect>
-      <x>174</x>
-      <y>150</y>
-      <width>91</width>
-      <height>41</height>
+      <x>20</x>
+      <y>100</y>
+      <width>211</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
      <string>Listar Todos</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="botaoOrdemAlfabetica">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>140</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ordem Alfabética</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="botaoConsultaDois">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>180</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ordem Alfabética e data de vacinação</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="botaoOrdemCEP">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>220</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ordem de CEP</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="botaoOrdemIdade">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>260</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ordem de Idade</string>
     </property>
    </widget>
   </widget>
@@ -87,7 +139,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>556</width>
+     <width>253</width>
      <height>21</height>
     </rect>
    </property>
